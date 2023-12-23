@@ -2,15 +2,15 @@ app-id: org.mfek.MFEKglif
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-cleanup: 
+cleanup:
   - /sdk
 build-options:
   append-path: /app/sdk/rust-nightly/bin
-  env: 
+  env:
     CARGO_HOME: /run/build/MFEKglif/cargo
-    SKIA_BINARIES_URL: "file:///run/build/MFEKglif/skia-binaries.tar.gz"
-    FORCE_SKIA_BINARIES_DOWNLOAD: "1"
-finish-args: 
+    SKIA_BINARIES_URL: file:///run/build/MFEKglif/skia-binaries.tar.gz
+    FORCE_SKIA_BINARIES_DOWNLOAD: '1'
+finish-args:
   - --share=ipc
   - --socket=wayland
   - --socket=fallback-x11
@@ -49,8 +49,8 @@ modules:
         only-arches:
           - x86_64
         dest: rust
-        url: https://static.rust-lang.org/dist/2023-11-27/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
-        sha256: 129f753431110e57c2b6860248a68da440314ffc9ffd6e122eba56180da159da
+        url: https://static.rust-lang.org/dist/2023-12-23/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
+        sha256: 645509f50cbc5d640e4995312152044960e7ee19912fa0d8b1554e321c89d9e9
         x-checker-data:
           type: rust
           package: rust
