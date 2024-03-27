@@ -35,13 +35,19 @@ modules:
     sources:
       - type: git
         url: https://github.com/MFEK/glif.git
-        commit: 8764b3e40a6dc219f3dc7db1429c58dff9795840
+        commit: 8e73c496cba390bba7ddbad7feeb8323c294b6bb
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/rust-skia/skia-binaries/releases/download/0.62.0/skia-binaries-8cf4841aefdb295709e9-x86_64-unknown-linux-gnu-gl.tar.gz
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.70.0/skia-binaries-84208280edf3e5d111e9-x86_64-unknown-linux-gnu-gl.tar.gz
         dest-filename: skia-binaries.tar.gz
-        sha256: e4806ae8566b1cc1e7692d9c5f0e0a32754a07591db6de884c107adea1922b7a
+        sha256: a5be71c6505f4b871e8baf8fda0444dcab578367fe15f23095ba9731e68c71f2
+      - type: file
+        only-arches:
+          - aarch64
+        url: https://github.com/rust-skia/skia-binaries/releases/download/0.70.0/skia-binaries-84208280edf3e5d111e9-aarch64-unknown-linux-gnu-gl.tar.gz
+        dest-filename: skia-binaries.tar.gz
+        sha256: e591b0d2714eafb6f8147df88eba52ef5df194733a2258ff4372a185e58e96c0
       - type: file
         path: ./org.mfek.MFEKglif.metainfo.xml
       - generated-sources.json
@@ -49,10 +55,21 @@ modules:
         only-arches:
           - x86_64
         dest: rust
-        url: https://static.rust-lang.org/dist/2023-11-27/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
-        sha256: 129f753431110e57c2b6860248a68da440314ffc9ffd6e122eba56180da159da
+        url: https://static.rust-lang.org/dist/2024-03-26/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
+        sha256: 47f362ceff573cd393dfe7e2f3e6248e52fe0d350cbf41a5851e9ea87902242e
         x-checker-data:
           type: rust
           package: rust
           channel: nightly
           target: x86_64-unknown-linux-gnu
+      - type: archive
+        only-arches:
+          - aarch64
+        dest: rust
+        url: https://static.rust-lang.org/dist/2024-03-26/rust-nightly-aarch64-unknown-linux-gnu.tar.xz
+        sha256: ae541e6b428e7b5dad008f0d73a43dd02bca8c9f0c403169765686a18cd5a813
+        x-checker-data:
+          type: rust
+          package: rust
+          channel: nightly
+          target: aarch64-unknown-linux-gnu
