@@ -1,6 +1,6 @@
 app-id: org.mfek.MFEKglif
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 cleanup: 
   - /sdk
@@ -35,7 +35,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/MFEK/glif.git
-        commit: 8e73c496cba390bba7ddbad7feeb8323c294b6bb
+        commit: e7c24c5d77b768429b7c7f13605b080fd3f1ca98
       - type: file
         only-arches:
           - x86_64
@@ -55,21 +55,11 @@ modules:
         only-arches:
           - x86_64
         dest: rust
-        url: https://static.rust-lang.org/dist/2024-03-26/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
-        sha256: 47f362ceff573cd393dfe7e2f3e6248e52fe0d350cbf41a5851e9ea87902242e
-        x-checker-data:
-          type: rust
-          package: rust
-          channel: nightly
-          target: x86_64-unknown-linux-gnu
+        url: https://static.rust-lang.org/dist/2026-07-22/rust-nightly-x86_64-unknown-linux-gnu.tar.xz
+        sha256: 5df1eebd4c287b2e688b5aeab012a3e3698c9d321225073ca580c9d6583e2546
       - type: archive
         only-arches:
           - aarch64
         dest: rust
-        url: https://static.rust-lang.org/dist/2024-03-26/rust-nightly-aarch64-unknown-linux-gnu.tar.xz
-        sha256: ae541e6b428e7b5dad008f0d73a43dd02bca8c9f0c403169765686a18cd5a813
-        x-checker-data:
-          type: rust
-          package: rust
-          channel: nightly
-          target: aarch64-unknown-linux-gnu
+        url: https://static.rust-lang.org/dist/2026-07-22/rust-nightly-aarch64-unknown-linux-gnu.tar.xz
+        sha256: a9a7ad85f293b31befae0f882be4e79c0313c2b37e691c78856204367c18f943
