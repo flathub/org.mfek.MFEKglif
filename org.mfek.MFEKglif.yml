@@ -27,7 +27,7 @@ modules:
       - cp ./resources/MFEKglif.png ./${FLATPAK_ID}.png
       - desktop-file-edit ./${FLATPAK_ID}.desktop --set-key=Icon --set-value=org.mfek.MFEKglif.png
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
-      - cargo --offline build --release --features=sdl2-static
+      - cargo --offline build --release
       - install -Dm755 ./target/release/MFEKglif -t /app/bin/
       - install -Dm644 ./${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
       - install -Dm644 ./${FLATPAK_ID}.desktop -t /app/share/applications/
